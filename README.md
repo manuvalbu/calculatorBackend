@@ -1,6 +1,6 @@
 # Backend Calculator
 
-Spring Boot Application initial Scaffolding
+Hexagonal architecture Spring Boot Application initial Scaffolding
 
 Steps for compiling and running project :
 - mvn clean install
