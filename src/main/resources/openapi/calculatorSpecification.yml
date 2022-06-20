@@ -1,0 +1,45 @@
+openapi: 3.0.1
+info:
+  title: Calculator API
+  description: Calculator endpoint for sum
+  version: 0.0.0
+servers:
+  - url: http://localhost:8888
+paths:
+  /sum/{addend1}/{addend2}:
+    get:
+      tags:
+        - Sum
+      summary: Sum 2 numbers
+      description: Returns the sum of the two input numbers
+      parameters:
+        - name: addend1
+          in: path
+          description: Addend1
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 1.3
+        - name: addend2
+          in: path
+          description: Addend2
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 1.2
+      responses:
+        200:
+          description: successful operation
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: 3.5
+        400:
+          description: Invalid addends supplied
+        500:
+          description: Server error
+
+
