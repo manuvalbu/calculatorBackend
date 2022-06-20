@@ -36,6 +36,32 @@ class CalculatorTest {
   }
 
   @Test
+  void calculateExpressionSub2Numbers_UT() {
+    String expression = "4-(-3)";
+    Calculator calculator = new Calculator();
+    Double result = calculator.evaluateExpression(expression, false);
+    assertEquals(4 + 3, result);
+    assertEquals(0, calculator.getMem());
+  }
+
+  @Test
+  void calculateExpressionSub2NumbersMem_UT() {
+    Double initialMem = 1.0;
+    String expression1 = "4-(-3)";
+    Calculator calculator = new Calculator(initialMem);
+    assertEquals(initialMem, calculator.getMem());
+    Double result1 = calculator.evaluateExpression(expression1, true);
+    assertEquals(4 + 3, result1);
+    assertEquals(result1, calculator.getMem());
+    String expression2 = "-2-7+mem";
+    Double result2 = calculator.evaluateExpression(expression2, true);
+    assertEquals(-2 - 7 + result1, result2);
+    assertEquals(result2, calculator.getMem());
+    calculator.resetMem();
+    assertEquals(0, calculator.getMem());
+  }
+
+  @Test
   void calculateBadExpressionUnknownVariableFail_UT() {
     String expression = "4+r";
     Calculator calculator = new Calculator();

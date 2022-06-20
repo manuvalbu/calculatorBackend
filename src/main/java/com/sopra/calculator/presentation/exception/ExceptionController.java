@@ -3,7 +3,6 @@ package com.sopra.calculator.presentation.exception;
 import static org.springframework.core.Ordered.HIGHEST_PRECEDENCE;
 
 import com.sopra.calculator.business.exception.NullNumberException;
-import com.sopra.calculator.presentation.dto.ExceptionDTO;
 import lombok.extern.slf4j.Slf4j;
 import net.objecthunter.exp4j.tokenizer.UnknownFunctionOrVariableException;
 import org.springframework.core.annotation.Order;
