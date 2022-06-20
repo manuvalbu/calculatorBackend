@@ -28,4 +28,15 @@ public class CalculatorService implements ICalculatorService {
     tracer.trace(result);
     return result;
   }
+
+  public Double calculate2NumbersSub(Double a, Double b) {
+    if (a == null || b == null) {
+      throw new NullNumberException("Not given value in any of the input numbers");
+    }
+    Calculator calculator = new Calculator();
+    String expression = a + "-" + b;
+    Double result = calculator.evaluateExpression(expression, false);
+    tracer.trace(result);
+    return result;
+  }
 }

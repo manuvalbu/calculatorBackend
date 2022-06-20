@@ -1,4 +1,4 @@
-package com.sopra.calculator.presentation.dto;
+package com.sopra.calculator.presentation.exception;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -53,4 +53,35 @@ class CalculatorServiceTest {
     assertThrows(NullNumberException.class,
         () -> calculatorService.calculate2NumbersSum(nullNumber, nullNumber));
   }
+
+  @Test
+  void sub2PositiveNumbers_UT() {
+    ICalculatorService calculatorService = new CalculatorService();
+    Double a = Math.random() * 100;
+    Double b = Math.random() * 100;
+    Double result = calculatorService.calculate2NumbersSub(a, b);
+    assertEquals(a - b, result);
+  }
+
+  @Test
+  void sub2NegativeNumbers_UT() {
+    ICalculatorService calculatorService = new CalculatorService();
+    Double a = Math.random() * 100 - 100;
+    Double b = Math.random() * 100 - 100;
+    Double result = calculatorService.calculate2NumbersSub(a, b);
+    assertEquals(a - b, result);
+  }
+
+  @Test
+  void sub2PositiveAndNegativeNumbers_UT() {
+    ICalculatorService calculatorService = new CalculatorService();
+    Double a = Math.random() * 100;
+    Double b = Math.random() * 100 - 100;
+    Double result = calculatorService.calculate2NumbersSub(a, b);
+    assertEquals(a - b, result);
+    a = Math.random() * 100 - 100;
+    b = Math.random() * 100;
+    result = calculatorService.calculate2NumbersSub(a, b);
+    assertEquals(a - b, result);
+  }
 }
